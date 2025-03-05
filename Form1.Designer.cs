@@ -63,7 +63,7 @@
             this.btnWindowController.TabIndex = 1;
             this.btnWindowController.Text = "Window Controller";
             this.btnWindowController.UseVisualStyleBackColor = false;
-            this.btnWindowController.Click += new System.EventHandler(this.btnShutdownWindow_Click);
+            this.btnWindowController.Click += new System.EventHandler(this.btnWindowController_Click);
             // 
             // btnCalendarReminders
             // 

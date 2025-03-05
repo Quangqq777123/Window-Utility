@@ -10,19 +10,26 @@ using System.Windows.Forms;
 
 namespace HeThongQuanLy
 {
+    
     public partial class Form1 : Form
     {
+        private MainForm mainForm;
         public Form1()
         {
             InitializeComponent();
+            this.mainForm = new MainForm();
         }
 
-        private void btnShutdownWindow_Click(object sender, EventArgs e)
+        private void btnWindowController_Click(object sender, EventArgs e)
         {
-            Form mainForm = new Form2();
-
-            mainForm.Show();
-
+            if (mainForm != null)
+            {
+                this.Hide();
+                mainForm.loadScreen(new WindowController());
+                mainForm.ShowDialog();
+                this.Show();
+            }
+            else return;
         }
     }
 }

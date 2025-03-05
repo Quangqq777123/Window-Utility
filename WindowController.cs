@@ -10,14 +10,14 @@ using System.Windows.Forms;
 
 namespace HeThongQuanLy
 {
-    public partial class Form2 : Form
+    public partial class WindowController : UserControl
     {
-        public Form2()
+        public WindowController()
         {
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void WindowController_Load(object sender, EventArgs e)
         {
 
         }
