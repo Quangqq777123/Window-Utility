@@ -1,5 +1,5 @@
 # Window Utility
-- Gôm các chức năng như:
+- Gồm các chức năng như:
 + Hẹn giờ tắt máy
 + Reset máy
 + Auto click
