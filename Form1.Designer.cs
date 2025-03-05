@@ -29,12 +29,14 @@
         private void InitializeComponent()
         {
             this.labelHeader = new System.Windows.Forms.Label();
-            this.btnShutdownWindow = new System.Windows.Forms.Button();
+            this.btnWindowController = new System.Windows.Forms.Button();
             this.btnCalendarReminders = new System.Windows.Forms.Button();
             this.btnBlockInternetAccess = new System.Windows.Forms.Button();
             this.btnNotes = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnRemoveTemporaryFiles = new System.Windows.Forms.Button();
+            this.btnTrackWindowActivity = new System.Windows.Forms.Button();
+            this.btnRepeatUserActivity = new System.Windows.Forms.Button();
+            this.btnAutoClick = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // labelHeader
@@ -50,25 +52,25 @@
             this.labelHeader.Text = "Window Utility";
             this.labelHeader.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // btnShutdownWindow
+            // btnWindowController
             // 
-            this.btnShutdownWindow.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.btnShutdownWindow.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShutdownWindow.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.btnShutdownWindow.Location = new System.Drawing.Point(43, 94);
-            this.btnShutdownWindow.Name = "btnShutdownWindow";
-            this.btnShutdownWindow.Size = new System.Drawing.Size(250, 50);
-            this.btnShutdownWindow.TabIndex = 1;
-            this.btnShutdownWindow.Text = "Window Controller";
-            this.btnShutdownWindow.UseVisualStyleBackColor = false;
-            this.btnShutdownWindow.Click += new System.EventHandler(this.btnShutdownWindow_Click);
+            this.btnWindowController.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnWindowController.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnWindowController.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
+            this.btnWindowController.Location = new System.Drawing.Point(55, 89);
+            this.btnWindowController.Name = "btnWindowController";
+            this.btnWindowController.Size = new System.Drawing.Size(250, 50);
+            this.btnWindowController.TabIndex = 1;
+            this.btnWindowController.Text = "Window Controller";
+            this.btnWindowController.UseVisualStyleBackColor = false;
+            this.btnWindowController.Click += new System.EventHandler(this.btnShutdownWindow_Click);
             // 
             // btnCalendarReminders
             // 
             this.btnCalendarReminders.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.btnCalendarReminders.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnCalendarReminders.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.btnCalendarReminders.Location = new System.Drawing.Point(365, 94);
+            this.btnCalendarReminders.Location = new System.Drawing.Point(353, 89);
             this.btnCalendarReminders.Name = "btnCalendarReminders";
             this.btnCalendarReminders.Size = new System.Drawing.Size(250, 50);
             this.btnCalendarReminders.TabIndex = 2;
@@ -80,7 +82,7 @@
             this.btnBlockInternetAccess.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.btnBlockInternetAccess.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnBlockInternetAccess.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.btnBlockInternetAccess.Location = new System.Drawing.Point(43, 175);
+            this.btnBlockInternetAccess.Location = new System.Drawing.Point(55, 159);
             this.btnBlockInternetAccess.Name = "btnBlockInternetAccess";
             this.btnBlockInternetAccess.Size = new System.Drawing.Size(250, 50);
             this.btnBlockInternetAccess.TabIndex = 3;
@@ -92,49 +94,75 @@
             this.btnNotes.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
             this.btnNotes.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNotes.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.btnNotes.Location = new System.Drawing.Point(365, 175);
+            this.btnNotes.Location = new System.Drawing.Point(353, 159);
             this.btnNotes.Name = "btnNotes";
             this.btnNotes.Size = new System.Drawing.Size(250, 50);
             this.btnNotes.TabIndex = 4;
             this.btnNotes.Text = "Notes";
             this.btnNotes.UseVisualStyleBackColor = false;
             // 
-            // button1
+            // btnRemoveTemporaryFiles
             // 
-            this.button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.button1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.button1.Location = new System.Drawing.Point(43, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(250, 50);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "Remove Temporary Files";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRemoveTemporaryFiles.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnRemoveTemporaryFiles.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRemoveTemporaryFiles.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
+            this.btnRemoveTemporaryFiles.Location = new System.Drawing.Point(55, 229);
+            this.btnRemoveTemporaryFiles.Name = "btnRemoveTemporaryFiles";
+            this.btnRemoveTemporaryFiles.Size = new System.Drawing.Size(250, 50);
+            this.btnRemoveTemporaryFiles.TabIndex = 5;
+            this.btnRemoveTemporaryFiles.Text = "Remove Temporary Files";
+            this.btnRemoveTemporaryFiles.UseVisualStyleBackColor = false;
             // 
-            // button2
+            // btnTrackWindowActivity
             // 
-            this.button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
-            this.button2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
-            this.button2.Location = new System.Drawing.Point(365, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(250, 50);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Track Window Activity";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnTrackWindowActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnTrackWindowActivity.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnTrackWindowActivity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
+            this.btnTrackWindowActivity.Location = new System.Drawing.Point(353, 229);
+            this.btnTrackWindowActivity.Name = "btnTrackWindowActivity";
+            this.btnTrackWindowActivity.Size = new System.Drawing.Size(250, 50);
+            this.btnTrackWindowActivity.TabIndex = 6;
+            this.btnTrackWindowActivity.Text = "Track Window Activity";
+            this.btnTrackWindowActivity.UseVisualStyleBackColor = false;
+            // 
+            // btnRepeatUserActivity
+            // 
+            this.btnRepeatUserActivity.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnRepeatUserActivity.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRepeatUserActivity.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
+            this.btnRepeatUserActivity.Location = new System.Drawing.Point(353, 299);
+            this.btnRepeatUserActivity.Name = "btnRepeatUserActivity";
+            this.btnRepeatUserActivity.Size = new System.Drawing.Size(250, 50);
+            this.btnRepeatUserActivity.TabIndex = 8;
+            this.btnRepeatUserActivity.Text = "Repeat User Activity";
+            this.btnRepeatUserActivity.UseVisualStyleBackColor = false;
+            // 
+            // btnAutoClick
+            // 
+            this.btnAutoClick.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(239)))), ((int)(((byte)(255)))));
+            this.btnAutoClick.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAutoClick.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(178)))), ((int)(((byte)(20)))), ((int)(((byte)(249)))));
+            this.btnAutoClick.Location = new System.Drawing.Point(55, 299);
+            this.btnAutoClick.Name = "btnAutoClick";
+            this.btnAutoClick.Size = new System.Drawing.Size(250, 50);
+            this.btnAutoClick.TabIndex = 7;
+            this.btnAutoClick.Text = "Auto Click";
+            this.btnAutoClick.UseVisualStyleBackColor = false;
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 28F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
-            this.ClientSize = new System.Drawing.Size(658, 340);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.ClientSize = new System.Drawing.Size(658, 372);
+            this.Controls.Add(this.btnRepeatUserActivity);
+            this.Controls.Add(this.btnAutoClick);
+            this.Controls.Add(this.btnTrackWindowActivity);
+            this.Controls.Add(this.btnRemoveTemporaryFiles);
             this.Controls.Add(this.btnNotes);
             this.Controls.Add(this.btnBlockInternetAccess);
             this.Controls.Add(this.btnCalendarReminders);
-            this.Controls.Add(this.btnShutdownWindow);
+            this.Controls.Add(this.btnWindowController);
             this.Controls.Add(this.labelHeader);
             this.Font = new System.Drawing.Font("Tahoma", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
@@ -150,12 +178,14 @@
         #endregion
 
         private System.Windows.Forms.Label labelHeader;
-        private System.Windows.Forms.Button btnShutdownWindow;
+        private System.Windows.Forms.Button btnWindowController;
         private System.Windows.Forms.Button btnCalendarReminders;
         private System.Windows.Forms.Button btnBlockInternetAccess;
         private System.Windows.Forms.Button btnNotes;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnRemoveTemporaryFiles;
+        private System.Windows.Forms.Button btnTrackWindowActivity;
+        private System.Windows.Forms.Button btnRepeatUserActivity;
+        private System.Windows.Forms.Button btnAutoClick;
     }
 }
 
