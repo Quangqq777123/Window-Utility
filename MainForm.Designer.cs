@@ -1,4 +1,4 @@
-﻿namespace HeThongQuanLy
+﻿namespace WindowUtility
 {
     partial class MainForm
     {

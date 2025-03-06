@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLy
+namespace WindowUtility
 {
     
     public partial class Form1 : Form
@@ -25,6 +25,7 @@ namespace HeThongQuanLy
             if (mainForm != null)
             {
                 this.Hide();
+                mainForm.Text = "Window Controller";  
                 mainForm.loadScreen(new WindowController());
                 mainForm.ShowDialog();
                 this.Show();

@@ -8,7 +8,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace HeThongQuanLy.Properties
+namespace WindowUtility.Properties
 {
 
 

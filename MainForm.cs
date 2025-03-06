@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace HeThongQuanLy
+namespace WindowUtility
 {
     public partial class MainForm : Form
     {
@@ -16,11 +16,16 @@ namespace HeThongQuanLy
         {
             InitializeComponent();
         }
+        private Size newFormSize(int width, int height)
+        {
+            return new Size(width+20, height+50);
+        }
         public void loadScreen(UserControl screen)
         {
             mainPanel.Controls.Clear();
-            screen.Dock = DockStyle.Fill;
+            screen.Dock = DockStyle.None;
             mainPanel.Controls.Add(screen);
+            this.Size = this.newFormSize(screen.Width, screen.Height);
         }
         private void MainForm_Load(object sender, EventArgs e)
         {
