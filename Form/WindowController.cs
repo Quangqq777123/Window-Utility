@@ -10,7 +10,7 @@ using System.Windows.Forms;
 
 namespace WindowUtility
 {
-    public partial class WindowController : UserControl
+    public partial class WindowController : Form
     {
         public WindowController()
         {
