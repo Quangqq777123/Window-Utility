@@ -1,76 +1,126 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Drawing;
 using System.Linq;
+using System.Runtime.Remoting.Metadata.W3cXsd2001;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace WindowUtility
 {
     internal class CustomTime
     {
-        private int hour;
-        private int minute;
-        private int second;
-        private int milliSecond;
-
-        public CustomTime(int hour, int minute, int second, int milliSecond)
+        private DateTime time;
+        public DateTime Time
         {
-            this.hour = Math.Abs(hour);
-            this.minute = Math.Abs(minute);
-            this.second = Math.Abs(second);
-            this.milliSecond = Math.Abs(milliSecond);
+            get { return this.time; }
+            set { time = value; }
+        }        
+        public CustomTime()
+        {
+            this.time = new DateTime();
         }
 
+        private static Tuple<int,int,int,int,int,int,int> timeNormalize(int year, int month, int day, int hour, int minute, int second, int millisecond)
+        {
+            second += millisecond / 1000;
+            millisecond %= 1000;
+            minute += second / 60;
+            second %= 60;
+            hour += minute / 60;
+            minute %= 60;
+            day += hour / 24;
+            hour %= 24;
+
+            while (true)
+            {
+                int daysInMonth = DateTime.DaysInMonth(year, month);
+                if (day <= daysInMonth)
+                    break;
+
+                day -= daysInMonth;
+                month++;
+
+                if (month > 12)
+                {
+                    month = 1;
+                    year++;
+                }
+            }
+
+            return Tuple.Create(year, month, day, hour, minute, second, millisecond);
+        }
+
+        public CustomTime(int year, int month, int day, int hour, int minute, int second, int millisecond )
+        {
+            Tuple<int,int,int,int,int,int,int> timeNormalized = timeNormalize(year, month, day, hour, minute, second, millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2,timeNormalized.Item3,timeNormalized.Item4,timeNormalized.Item5,timeNormalized.Item6,timeNormalized.Item7);
+        }
+
+        public CustomTime(int year, int month, int day, int hour, int minute, int second)
+        {
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(year, month, day, hour, minute, second, 0);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
+
+        }
+
+        public CustomTime(int hour, int minute, int second, int millisecond) {
+            DateTime now = DateTime.Now;
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(now.Year, now.Month, now.Day, hour, minute, second, millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
+        }
         public CustomTime(int hour, int minute, int second)
         {
-            this.hour = Math.Abs(hour);
-            this.minute = Math.Abs(minute);
-            this.second = Math.Abs(second);
-            this.milliSecond = 0;
+            DateTime now = DateTime.Now;
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(now.Year, now.Month, now.Day, hour, minute, second, 0);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
 
-        public int Hour
+        public void now()
         {
-            get { return this.hour; }
-            set { this.hour = Math.Abs(value); }
+            try
+            {
+                this.time = DateTime.Now;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine(e.ToString());
+            }
+            
         }
 
-        public int Minute
+        public void setYear(int year)
         {
-            set { this.minute = Math.Abs(value); }
-            get { return this.minute; }
+            this.time.AddYears(year);
         }
 
-        public int Second
+        public int getYear()
         {
-            set { this.second = Math.Abs(value); }
-            get { return this.second; }
+            return this.time.Year;
+        }
+
+        public void setMonth(int month)
+        {
+            this.time.AddMonths(month);
+        }
+
+        public int getMonth()
+        {
+            return this.time.Month;
+        }
+
+        public void setDay(int day)
+        {
+            this.time.AddMonths(day);
+        }
+
+        public int getDay()
+        {
+            return this.time.Day;
         }
         
-        public int MilliSecond
-        {
-            set { this.milliSecond = Math.Abs(value); }
-            get { return this.milliSecond; }           
-        }
-
-        public void timeNormalization()
-        {
-            int temp = this.milliSecond / 1000;
-            this.milliSecond %= 1000;
-            temp = (temp + this.second) / 60;
-            this.second = (temp + this.second) % 60;
-            temp = (temp + this.minute) / 60;
-            this.minute = (temp + this.minute) % 60;
-            temp = (temp + this.hour) / 24;
-            this.hour = (temp + this.hour) % 24;
-        }
-
-        public int calculateSecond()
-        {
-            this.timeNormalization();
-            return this.hour*3600 + this.minute*60 + this.second + this.milliSecond/1000;
-        }
-
 
     }
+
 }
