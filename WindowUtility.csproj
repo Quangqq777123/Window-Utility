@@ -65,7 +65,6 @@
     <Compile Include="Form\WindowController.Designer.cs">
       <DependentUpon>WindowController.cs</DependentUpon>
     </Compile>
-    <Compile Include="test.cs" />
     <EmbeddedResource Include="Form\Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
