@@ -6,8 +6,8 @@
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{DAC32C74-8FEE-4E58-857D-3514DB450523}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>HeThongQuanLy</RootNamespace>
-    <AssemblyName>HeThongQuanLy</AssemblyName>
+    <RootNamespace>WindowUtility</RootNamespace>
+    <AssemblyName>WindowUtility</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -76,6 +76,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Form\WindowController.resx">
       <DependentUpon>WindowController.cs</DependentUpon>
