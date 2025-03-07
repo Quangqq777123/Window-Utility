@@ -1,0 +1,4 @@
+﻿--không đụng vào app.manifest
+ **<requestedExecutionLevel level="requireAdministrator" uiAccess="false" /> --> ứng dụng yêu cầu quyền admin khi bắt đầu chạy
+
+ --Viết Note lưu ý trong đây, khi nào xong thì xóa note :)))

@@ -11,7 +11,9 @@ namespace WindowUtility
     internal class PowerControl
     {
         /*
-         * https://stackoverflow.com/questions/2079813/c-sharp-put-pc-to-sleep-or-hibernate
+         * dựa trên https://stackoverflow.com/questions/2079813/c-sharp-put-pc-to-sleep-or-hibernate
+         * sử dụng api của thư viện PowrProf.dll
+         * sử dụng hàm SetSuspendState cho việc điều khiển máy sleep hoạt hibernate 
          */
         [DllImport("PowrProf.dll", CharSet = CharSet.Auto, ExactSpelling = true)]
         public static extern bool SetSuspendState(bool hiberate, bool forceCritical, bool disableWakeEvent);

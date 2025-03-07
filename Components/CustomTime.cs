@@ -9,6 +9,11 @@ using System.Windows.Forms;
 
 namespace WindowUtility
 {
+    /*
+     * class wrapper Datetime
+     * có các chức năng hỗ trợ tính toán ngày tháng
+     * dựa trên struct DateTime có sẵn 
+     */
     internal class CustomTime
     {
         private DateTime time;
@@ -24,6 +29,11 @@ namespace WindowUtility
 
         private static Tuple<int,int,int,int,int,int,int> timeNormalize(int year, int month, int day, int hour, int minute, int second, int millisecond)
         {
+            /*
+             hàm chuẩn hóa thời gian,
+             chỉ sử dụng 1 lần cho việc khởi tạo bằng constructor
+             sau này việc chuẩn hóa sẽ tự động nhờ hàm add có sẵn của struct DateTime
+             */
             second += millisecond / 1000;
             millisecond %= 1000;
             minute += second / 60;
