@@ -21,5 +21,10 @@ namespace WindowUtility
         {
 
         }
+
+        private void rBtnShutdown_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

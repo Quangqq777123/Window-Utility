@@ -134,6 +134,7 @@
             this.rBtnShutdown.Text = "Shutdown";
             this.rBtnShutdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnShutdown.UseVisualStyleBackColor = true;
+            this.rBtnShutdown.CheckedChanged += new System.EventHandler(this.rBtnShutdown_CheckedChanged);
             // 
             // groupBoxSetting
             // 
@@ -160,7 +161,7 @@
             // 
             // WindowController
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(15F, 28F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(771, 446);
