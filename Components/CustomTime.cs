@@ -17,17 +17,11 @@ namespace WindowUtility
     internal class CustomTime
     {
         private DateTime time;
-        public DateTime Time
-        {
-            get { return this.time; }
-            set { time = value; }
-        }        
+        ///constructor
         public CustomTime()
         {
             this.time = new DateTime();
         }
-
-
         public CustomTime(int year, int month, int day, int hour, int minute, int second, int millisecond )
         {
             Tuple<int,int,int,int,int,int,int> timeNormalized = timeNormalize(year, month, day, hour, minute, second, millisecond);
@@ -51,6 +45,7 @@ namespace WindowUtility
             this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
 
+        ///methods
         private static Tuple<int, int, int, int, int, int, int> timeNormalize(int year, int month, int day, int hour, int minute, int second, int millisecond)
         {
             /*
@@ -97,8 +92,37 @@ namespace WindowUtility
             }
             
         }
+        public override string ToString()
+        {
+            return this.time.ToString("yyyy-MM-dd HH:mm:ss.fff");
+        }
 
+        public double getDifferenceDays(DateTime newTime)
+        {
+            return newTime.Subtract(this.time).TotalDays;
+        }
+        public double getDifferenceHours(DateTime newTime)
+        {
+            return newTime.Subtract(this.time).TotalHours;
+        }
+        public double getDifferenceMinutes(DateTime newTime)
+        {
+            return newTime.Subtract(this.time).TotalMinutes;
+        }
+        public double getDifferenceSeconds(DateTime newTime)
+        {
+           return newTime.Subtract(this.time).TotalSeconds;
+        }
+        public double getDifferenceMilliseconds(DateTime newTime)
+        {
+            return newTime.Subtract(this.time).TotalMilliseconds;
+        }
         ///getter and setter
+        public DateTime Time
+        {
+            get { return this.time; }
+            set { time = value; }
+        }
         public void setYear(int year)
         {
             this.time.AddYears(year);

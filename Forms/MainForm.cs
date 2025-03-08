@@ -11,10 +11,13 @@ using System.Windows.Forms;
 namespace WindowUtility
 {
     
-    public partial class Form1 : Form
+    public partial class MainForm : System.Windows.Forms.Form
     {
+        System.Windows.Forms.Form windowControllerForm;
 
-        public Form1()
+
+
+        public MainForm()
         {
             InitializeComponent();
 
@@ -22,7 +25,9 @@ namespace WindowUtility
 
         private void btnWindowController_Click(object sender, EventArgs e)
         {
-            Form windowControllerForm = new WindowController();
+            if (windowControllerForm == null) {
+                windowControllerForm = new WindowController();
+            }
             this.Hide();
             windowControllerForm.ShowDialog();
             this.Show();
