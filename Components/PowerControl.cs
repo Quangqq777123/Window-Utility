@@ -16,7 +16,8 @@ namespace WindowUtility
          * sử dụng api của thư viện PowrProf.dll
          * sử dụng hàm SetSuspendState cho việc điều khiển máy sleep hoạt hibernate 
          * dựa trên https://stackoverflow.com/questions/14466373/log-off-a-windows-user-locally-using-c-sharp
-         * 
+         * sử dụng api của thư viện user32.dll
+         * sử dụng hàm ExitWindowsEx  cho việc log out user
          */
         [DllImport("user32.dll", SetLastError = true)]
         private static extern bool ExitWindowsEx(uint uFlags, uint dwReason);
