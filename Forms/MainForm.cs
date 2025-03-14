@@ -30,7 +30,11 @@ namespace WindowUtility
             }
             this.Hide();
             windowControllerForm.ShowDialog();
+            windowControllerForm.Dispose();
+            windowControllerForm=null;
+            GC.Collect();
             this.Show();
+            
         }
     }
 }

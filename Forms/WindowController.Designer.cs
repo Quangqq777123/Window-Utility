@@ -39,21 +39,23 @@
             this.groupBoxSettingTime = new System.Windows.Forms.GroupBox();
             this.labelNote = new System.Windows.Forms.Label();
             this.groupBoxTime = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.btnIncreaseSec = new System.Windows.Forms.Button();
+            this.btnDecreaseSec = new System.Windows.Forms.Button();
+            this.textBoxSec = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.btnIncreaseMin = new System.Windows.Forms.Button();
+            this.btnDecreaseMin = new System.Windows.Forms.Button();
+            this.textBoxMin = new System.Windows.Forms.TextBox();
+            this.label1 = new System.Windows.Forms.Label();
+            this.btnIncreaseHr = new System.Windows.Forms.Button();
+            this.btnDecreaseHr = new System.Windows.Forms.Button();
             this.textBoxHr = new System.Windows.Forms.TextBox();
             this.rBtnStartAfter = new System.Windows.Forms.RadioButton();
             this.rBtnStartAt = new System.Windows.Forms.RadioButton();
             this.rBtnStartNow = new System.Windows.Forms.RadioButton();
-            this.btnDecreaseHr = new System.Windows.Forms.Button();
-            this.btnIncreaseHr = new System.Windows.Forms.Button();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.btnIncreaseMin = new System.Windows.Forms.Button();
-            this.btnDecreaseMin = new System.Windows.Forms.Button();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.btnIncreaseSec = new System.Windows.Forms.Button();
-            this.btnDecreaseSec = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.btnSet = new System.Windows.Forms.Button();
+            this.btnReset = new System.Windows.Forms.Button();
             this.groupBoxMode.SuspendLayout();
             this.groupBoxSettingTime.SuspendLayout();
             this.groupBoxTime.SuspendLayout();
@@ -61,8 +63,9 @@
             // 
             // btnHome
             // 
-            this.btnHome.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnHome.Location = new System.Drawing.Point(104, 334);
+            this.btnHome.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHome.ForeColor = System.Drawing.Color.Navy;
+            this.btnHome.Location = new System.Drawing.Point(111, 334);
             this.btnHome.Name = "btnHome";
             this.btnHome.Size = new System.Drawing.Size(138, 47);
             this.btnHome.TabIndex = 0;
@@ -98,6 +101,7 @@
             this.rBtnHibernate.Text = "Hibernate";
             this.rBtnHibernate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnHibernate.UseVisualStyleBackColor = true;
+            this.rBtnHibernate.CheckedChanged += new System.EventHandler(this.rBtnHibernate_CheckedChanged);
             // 
             // rBtnSleep
             // 
@@ -111,6 +115,7 @@
             this.rBtnSleep.Text = "Sleep";
             this.rBtnSleep.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnSleep.UseVisualStyleBackColor = true;
+            this.rBtnSleep.CheckedChanged += new System.EventHandler(this.rBtnSleep_CheckedChanged);
             // 
             // rBtnLogOut
             // 
@@ -124,6 +129,7 @@
             this.rBtnLogOut.Text = "Log out";
             this.rBtnLogOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnLogOut.UseVisualStyleBackColor = true;
+            this.rBtnLogOut.CheckedChanged += new System.EventHandler(this.rBtnLogOut_CheckedChanged);
             // 
             // rBtnRestart
             // 
@@ -138,6 +144,7 @@
             this.rBtnRestart.Text = "Restart";
             this.rBtnRestart.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnRestart.UseVisualStyleBackColor = true;
+            this.rBtnRestart.CheckedChanged += new System.EventHandler(this.rBtnRestart_CheckedChanged);
             // 
             // rBtnShutdown
             // 
@@ -153,6 +160,7 @@
             this.rBtnShutdown.Text = "Shutdown";
             this.rBtnShutdown.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             this.rBtnShutdown.UseVisualStyleBackColor = true;
+            this.rBtnShutdown.CheckedChanged += new System.EventHandler(this.rBtnShutdown_CheckedChanged);
             // 
             // groupBoxSettingTime
             // 
@@ -172,12 +180,11 @@
             // 
             // labelNote
             // 
-            this.labelNote.Font = new System.Drawing.Font("Tahoma", 7.8F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelNote.Font = new System.Drawing.Font("Tahoma", 9F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.labelNote.Location = new System.Drawing.Point(224, 134);
             this.labelNote.Name = "labelNote";
             this.labelNote.Size = new System.Drawing.Size(468, 30);
             this.labelNote.TabIndex = 5;
-            this.labelNote.Text = "label1";
             this.labelNote.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // groupBoxTime
@@ -185,11 +192,11 @@
             this.groupBoxTime.Controls.Add(this.label3);
             this.groupBoxTime.Controls.Add(this.btnIncreaseSec);
             this.groupBoxTime.Controls.Add(this.btnDecreaseSec);
-            this.groupBoxTime.Controls.Add(this.textBox3);
+            this.groupBoxTime.Controls.Add(this.textBoxSec);
             this.groupBoxTime.Controls.Add(this.label2);
             this.groupBoxTime.Controls.Add(this.btnIncreaseMin);
             this.groupBoxTime.Controls.Add(this.btnDecreaseMin);
-            this.groupBoxTime.Controls.Add(this.textBox2);
+            this.groupBoxTime.Controls.Add(this.textBoxMin);
             this.groupBoxTime.Controls.Add(this.label1);
             this.groupBoxTime.Controls.Add(this.btnIncreaseHr);
             this.groupBoxTime.Controls.Add(this.btnDecreaseHr);
@@ -200,14 +207,134 @@
             this.groupBoxTime.TabIndex = 4;
             this.groupBoxTime.TabStop = false;
             // 
+            // label3
+            // 
+            this.label3.Location = new System.Drawing.Point(374, 31);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(50, 30);
+            this.label3.TabIndex = 11;
+            this.label3.Text = "sec";
+            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnIncreaseSec
+            // 
+            this.btnIncreaseSec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseSec.BackgroundImage")));
+            this.btnIncreaseSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncreaseSec.Location = new System.Drawing.Point(355, 29);
+            this.btnIncreaseSec.Name = "btnIncreaseSec";
+            this.btnIncreaseSec.Size = new System.Drawing.Size(20, 15);
+            this.btnIncreaseSec.TabIndex = 7;
+            this.btnIncreaseSec.UseVisualStyleBackColor = true;
+            this.btnIncreaseSec.Click += new System.EventHandler(this.btnIncreaseSec_Click);
+            // 
+            // btnDecreaseSec
+            // 
+            this.btnDecreaseSec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseSec.BackgroundImage")));
+            this.btnDecreaseSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecreaseSec.Location = new System.Drawing.Point(355, 44);
+            this.btnDecreaseSec.Name = "btnDecreaseSec";
+            this.btnDecreaseSec.Size = new System.Drawing.Size(20, 15);
+            this.btnDecreaseSec.TabIndex = 8;
+            this.btnDecreaseSec.UseVisualStyleBackColor = true;
+            this.btnDecreaseSec.Click += new System.EventHandler(this.btnDecreaseSec_Click);
+            // 
+            // textBoxSec
+            // 
+            this.textBoxSec.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxSec.Location = new System.Drawing.Point(302, 29);
+            this.textBoxSec.Name = "textBoxSec";
+            this.textBoxSec.Size = new System.Drawing.Size(53, 32);
+            this.textBoxSec.TabIndex = 6;
+            this.textBoxSec.Text = "00";
+            this.textBoxSec.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxSec.Click += new System.EventHandler(this.textBoxSec_Click);
+            this.textBoxSec.TextChanged += new System.EventHandler(this.textBoxSec_TextChanged);
+            // 
+            // label2
+            // 
+            this.label2.Location = new System.Drawing.Point(245, 31);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(50, 30);
+            this.label2.TabIndex = 7;
+            this.label2.Text = "min";
+            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnIncreaseMin
+            // 
+            this.btnIncreaseMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseMin.BackgroundImage")));
+            this.btnIncreaseMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncreaseMin.Location = new System.Drawing.Point(226, 29);
+            this.btnIncreaseMin.Name = "btnIncreaseMin";
+            this.btnIncreaseMin.Size = new System.Drawing.Size(20, 15);
+            this.btnIncreaseMin.TabIndex = 4;
+            this.btnIncreaseMin.UseVisualStyleBackColor = true;
+            this.btnIncreaseMin.Click += new System.EventHandler(this.btnIncreaseMin_Click);
+            // 
+            // btnDecreaseMin
+            // 
+            this.btnDecreaseMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseMin.BackgroundImage")));
+            this.btnDecreaseMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecreaseMin.Location = new System.Drawing.Point(226, 44);
+            this.btnDecreaseMin.Name = "btnDecreaseMin";
+            this.btnDecreaseMin.Size = new System.Drawing.Size(20, 15);
+            this.btnDecreaseMin.TabIndex = 5;
+            this.btnDecreaseMin.UseVisualStyleBackColor = true;
+            this.btnDecreaseMin.Click += new System.EventHandler(this.btnDecreaseMin_Click);
+            // 
+            // textBoxMin
+            // 
+            this.textBoxMin.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.textBoxMin.Location = new System.Drawing.Point(173, 29);
+            this.textBoxMin.Name = "textBoxMin";
+            this.textBoxMin.Size = new System.Drawing.Size(53, 32);
+            this.textBoxMin.TabIndex = 3;
+            this.textBoxMin.Text = "00";
+            this.textBoxMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxMin.Click += new System.EventHandler(this.textBoxMin_Click);
+            this.textBoxMin.TextChanged += new System.EventHandler(this.textBoxMin_TextChanged);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(117, 31);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(50, 30);
+            this.label1.TabIndex = 3;
+            this.label1.Text = "hr";
+            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // btnIncreaseHr
+            // 
+            this.btnIncreaseHr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseHr.BackgroundImage")));
+            this.btnIncreaseHr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnIncreaseHr.Location = new System.Drawing.Point(98, 29);
+            this.btnIncreaseHr.Name = "btnIncreaseHr";
+            this.btnIncreaseHr.Size = new System.Drawing.Size(20, 15);
+            this.btnIncreaseHr.TabIndex = 1;
+            this.btnIncreaseHr.UseVisualStyleBackColor = true;
+            this.btnIncreaseHr.Click += new System.EventHandler(this.btnIncreaseHr_Click);
+            // 
+            // btnDecreaseHr
+            // 
+            this.btnDecreaseHr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseHr.BackgroundImage")));
+            this.btnDecreaseHr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.btnDecreaseHr.Location = new System.Drawing.Point(98, 44);
+            this.btnDecreaseHr.Name = "btnDecreaseHr";
+            this.btnDecreaseHr.Size = new System.Drawing.Size(20, 15);
+            this.btnDecreaseHr.TabIndex = 2;
+            this.btnDecreaseHr.UseVisualStyleBackColor = true;
+            this.btnDecreaseHr.Click += new System.EventHandler(this.btnDecreaseHr_Click);
+            // 
             // textBoxHr
             // 
             this.textBoxHr.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.textBoxHr.Location = new System.Drawing.Point(45, 29);
-            this.textBoxHr.Multiline = true;
             this.textBoxHr.Name = "textBoxHr";
-            this.textBoxHr.Size = new System.Drawing.Size(53, 30);
+            this.textBoxHr.Size = new System.Drawing.Size(53, 32);
             this.textBoxHr.TabIndex = 0;
+            this.textBoxHr.Text = "00";
+            this.textBoxHr.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBoxHr.Click += new System.EventHandler(this.textBoxHr_Click);
+            this.textBoxHr.TextChanged += new System.EventHandler(this.textBoxHr_TextChanged);
             // 
             // rBtnStartAfter
             // 
@@ -250,110 +377,29 @@
             this.rBtnStartNow.UseVisualStyleBackColor = true;
             this.rBtnStartNow.CheckedChanged += new System.EventHandler(this.rBtnStartNow_CheckedChanged);
             // 
-            // btnDecreaseHr
+            // btnSet
             // 
-            this.btnDecreaseHr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseHr.BackgroundImage")));
-            this.btnDecreaseHr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDecreaseHr.Location = new System.Drawing.Point(98, 44);
-            this.btnDecreaseHr.Name = "btnDecreaseHr";
-            this.btnDecreaseHr.Size = new System.Drawing.Size(20, 15);
-            this.btnDecreaseHr.TabIndex = 2;
-            this.btnDecreaseHr.UseVisualStyleBackColor = true;
+            this.btnSet.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSet.ForeColor = System.Drawing.Color.Navy;
+            this.btnSet.Location = new System.Drawing.Point(316, 334);
+            this.btnSet.Name = "btnSet";
+            this.btnSet.Size = new System.Drawing.Size(138, 47);
+            this.btnSet.TabIndex = 4;
+            this.btnSet.Text = "Set";
+            this.btnSet.UseVisualStyleBackColor = true;
+            this.btnSet.Click += new System.EventHandler(this.btnSet_Click);
             // 
-            // btnIncreaseHr
+            // btnReset
             // 
-            this.btnIncreaseHr.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseHr.BackgroundImage")));
-            this.btnIncreaseHr.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIncreaseHr.Location = new System.Drawing.Point(98, 29);
-            this.btnIncreaseHr.Name = "btnIncreaseHr";
-            this.btnIncreaseHr.Size = new System.Drawing.Size(20, 15);
-            this.btnIncreaseHr.TabIndex = 1;
-            this.btnIncreaseHr.UseVisualStyleBackColor = true;
-            // 
-            // label1
-            // 
-            this.label1.Location = new System.Drawing.Point(117, 31);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(50, 30);
-            this.label1.TabIndex = 3;
-            this.label1.Text = "hr";
-            this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label2
-            // 
-            this.label2.Location = new System.Drawing.Point(245, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(50, 30);
-            this.label2.TabIndex = 7;
-            this.label2.Text = "min";
-            this.label2.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnIncreaseMin
-            // 
-            this.btnIncreaseMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseMin.BackgroundImage")));
-            this.btnIncreaseMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIncreaseMin.Location = new System.Drawing.Point(226, 29);
-            this.btnIncreaseMin.Name = "btnIncreaseMin";
-            this.btnIncreaseMin.Size = new System.Drawing.Size(20, 15);
-            this.btnIncreaseMin.TabIndex = 4;
-            this.btnIncreaseMin.UseVisualStyleBackColor = true;
-            // 
-            // btnDecreaseMin
-            // 
-            this.btnDecreaseMin.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseMin.BackgroundImage")));
-            this.btnDecreaseMin.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDecreaseMin.Location = new System.Drawing.Point(226, 44);
-            this.btnDecreaseMin.Name = "btnDecreaseMin";
-            this.btnDecreaseMin.Size = new System.Drawing.Size(20, 15);
-            this.btnDecreaseMin.TabIndex = 5;
-            this.btnDecreaseMin.UseVisualStyleBackColor = true;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(173, 29);
-            this.textBox2.Multiline = true;
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(53, 30);
-            this.textBox2.TabIndex = 3;
-            // 
-            // label3
-            // 
-            this.label3.Location = new System.Drawing.Point(374, 31);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(50, 30);
-            this.label3.TabIndex = 11;
-            this.label3.Text = "sec";
-            this.label3.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // btnIncreaseSec
-            // 
-            this.btnIncreaseSec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnIncreaseSec.BackgroundImage")));
-            this.btnIncreaseSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnIncreaseSec.Location = new System.Drawing.Point(355, 29);
-            this.btnIncreaseSec.Name = "btnIncreaseSec";
-            this.btnIncreaseSec.Size = new System.Drawing.Size(20, 15);
-            this.btnIncreaseSec.TabIndex = 7;
-            this.btnIncreaseSec.UseVisualStyleBackColor = true;
-            // 
-            // btnDecreaseSec
-            // 
-            this.btnDecreaseSec.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnDecreaseSec.BackgroundImage")));
-            this.btnDecreaseSec.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnDecreaseSec.Location = new System.Drawing.Point(355, 44);
-            this.btnDecreaseSec.Name = "btnDecreaseSec";
-            this.btnDecreaseSec.Size = new System.Drawing.Size(20, 15);
-            this.btnDecreaseSec.TabIndex = 8;
-            this.btnDecreaseSec.UseVisualStyleBackColor = true;
-            // 
-            // textBox3
-            // 
-            this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox3.Location = new System.Drawing.Point(302, 29);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(53, 30);
-            this.textBox3.TabIndex = 6;
+            this.btnReset.Font = new System.Drawing.Font("Tahoma", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnReset.ForeColor = System.Drawing.Color.Navy;
+            this.btnReset.Location = new System.Drawing.Point(521, 334);
+            this.btnReset.Name = "btnReset";
+            this.btnReset.Size = new System.Drawing.Size(138, 47);
+            this.btnReset.TabIndex = 5;
+            this.btnReset.Text = "Reset";
+            this.btnReset.UseVisualStyleBackColor = true;
+            this.btnReset.Click += new System.EventHandler(this.btnReset_Click);
             // 
             // WindowController
             // 
@@ -361,6 +407,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(251)))), ((int)(((byte)(251)))), ((int)(((byte)(251)))));
             this.ClientSize = new System.Drawing.Size(771, 402);
+            this.Controls.Add(this.btnReset);
+            this.Controls.Add(this.btnSet);
             this.Controls.Add(this.groupBoxSettingTime);
             this.Controls.Add(this.groupBoxMode);
             this.Controls.Add(this.btnHome);
@@ -402,10 +450,12 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Button btnIncreaseSec;
         private System.Windows.Forms.Button btnDecreaseSec;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox textBoxSec;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Button btnIncreaseMin;
         private System.Windows.Forms.Button btnDecreaseMin;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox textBoxMin;
+        private System.Windows.Forms.Button btnSet;
+        private System.Windows.Forms.Button btnReset;
     }
 }

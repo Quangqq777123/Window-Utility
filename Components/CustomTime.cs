@@ -20,12 +20,12 @@ namespace WindowUtility
         ///constructor
         public CustomTime()
         {
-            this.time = new DateTime();
+            this.time = DateTime.Now;
         }
-        public CustomTime(int year, int month, int day, int hour, int minute, int second, int millisecond )
+        public CustomTime(int year, int month, int day, int hour, int minute, int second, int millisecond)
         {
-            Tuple<int,int,int,int,int,int,int> timeNormalized = timeNormalize(year, month, day, hour, minute, second, millisecond);
-            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2,timeNormalized.Item3,timeNormalized.Item4,timeNormalized.Item5,timeNormalized.Item6,timeNormalized.Item7);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(year, month, day, hour, minute, second, millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public CustomTime(int year, int month, int day, int hour, int minute, int second)
         {
@@ -82,58 +82,79 @@ namespace WindowUtility
         }
         public void now()
         {
-            try
-            {
-                this.time = DateTime.Now;
-            }
-            catch (Exception e)
-            {
-                Console.WriteLine(e.ToString());
-            }
-            
+            this.time = DateTime.Now;
         }
         public override string ToString()
         {
-            return this.time.ToString("yyyy-MM-dd HH:mm:ss.fff");
+            return this.time.ToString("dd-MM-yyyy HH:mm:ss.fff");
         }
-
-        public double getDifferenceDays(DateTime newTime)
+        public double getDifferenceDays(CustomTime newTime)
         {
-            return newTime.Subtract(this.time).TotalDays;
+            return this.time.Subtract(newTime.Time).TotalDays;
         }
-        public double getDifferenceHours(DateTime newTime)
+        public double getDifferenceHours(CustomTime newTime)
         {
-            return newTime.Subtract(this.time).TotalHours;
+            return this.time.Subtract(newTime.Time).TotalHours;
         }
-        public double getDifferenceMinutes(DateTime newTime)
+        public double getDifferenceMinutes(CustomTime newTime)
         {
-            return newTime.Subtract(this.time).TotalMinutes;
+            return this.time.Subtract(newTime.Time).TotalMinutes;
         }
-        public double getDifferenceSeconds(DateTime newTime)
+        public double getDifferenceSeconds(CustomTime newTime)
         {
-           return newTime.Subtract(this.time).TotalSeconds;
+            return this.time.Subtract(newTime.Time).TotalSeconds;
         }
-        public double getDifferenceMilliseconds(DateTime newTime)
+        public double getDifferenceMilliseconds(CustomTime newTime)
         {
-            return newTime.Subtract(this.time).TotalMilliseconds;
+            return this.time.Subtract(newTime.Time).TotalMilliseconds;
+        }
+        public void addYear(int year)
+        {
+            this.time = this.time.AddYears(year);
+        }
+        public void addMonth(int month)
+        {
+            this.time = this.time.AddMonths(month);
+        }
+        public void addDay(int day)
+        {
+            this.time = this.time.AddDays(day);
+        }
+        public void addHour(int hour)
+        {
+            this.time = this.time.AddHours(hour);
+        }
+        public void addMinute(int minute)
+        {
+            this.time = this.time.AddMinutes(minute);
+        }
+        public void addSecond(int second)
+        {
+            this.time = this.time.AddSeconds(second);
+        }
+        public void addMillisecond(int millisecond)
+        {
+            this.time = this.time.AddMilliseconds(millisecond);
         }
         ///getter and setter
         public DateTime Time
         {
             get { return this.time; }
-            set { time = value; }
+            set { this.time = value; }
         }
         public void setYear(int year)
         {
-            this.time.AddYears(year);
-        }
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(year, this.time.Month, this.time.Day, this.time.Hour, this.time.Minute, this.time.Second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
+        } 
         public int getYear()
         {
             return this.time.Year;
         }
         public void setMonth(int month)
         {
-            this.time.AddMonths(month);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, month, this.time.Day, this.time.Hour, this.time.Minute, this.time.Second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getMonth()
         {
@@ -141,15 +162,17 @@ namespace WindowUtility
         }
         public void setDay(int day)
         {
-            this.time.AddMonths(day);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, this.time.Month, day, this.time.Hour, this.time.Minute, this.time.Second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getDay()
         {
             return this.time.Day;
-        } 
+        }
         public void setHour(int hour)
         {
-            this.time.AddHours(hour);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, this.time.Month, this.time.Day, hour, this.time.Minute, this.time.Second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getHour()
         {
@@ -157,7 +180,8 @@ namespace WindowUtility
         }
         public void setMinute(int minute)
         {
-            this.time.AddMinutes(minute);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, this.time.Month, this.time.Day, this.time.Hour, minute, this.time.Second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getMinute()
         {
@@ -165,7 +189,8 @@ namespace WindowUtility
         }
         public void setSecond(int second)
         {
-            this.time.AddSeconds(second);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, this.time.Month, this.time.Day, this.time.Hour, this.time.Minute,second, this.time.Millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getSecond()
         {
@@ -173,7 +198,8 @@ namespace WindowUtility
         }
         public void setMillisecond(int millisecond)
         {
-            this.time.AddMilliseconds(millisecond);
+            Tuple<int, int, int, int, int, int, int> timeNormalized = timeNormalize(this.time.Year, this.time.Month, this.time.Day, this.time.Hour, this.time.Minute, this.time.Second, millisecond);
+            this.time = new DateTime(timeNormalized.Item1, timeNormalized.Item2, timeNormalized.Item3, timeNormalized.Item4, timeNormalized.Item5, timeNormalized.Item6, timeNormalized.Item7);
         }
         public int getMillisecond()
         {
